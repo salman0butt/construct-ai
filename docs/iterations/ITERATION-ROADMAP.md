@@ -1,13 +1,11 @@
 # Iteration roadmap
 
 ## M00 — Product foundation
-- M00.1: Recovery framework
-- M00.2: local prerequisites
-- M00.3: pnpm/Turbo scaffold
-- M00.4: web/API/worker
-- M00.5: local infra
-- M00.6: smoke tests
-- M00.7: documentation
+- M00.1: Recovery framework and prerequisite verification
+- M00.2: Monorepo and executable application skeleton
+- M00.3: Local PostgreSQL/Auth/Storage and Redis
+- M00.4: Health/smoke tests and developer scripts
+- M00.5: Review, verification and integration
 
 ## M01 — Identity and tenant security
 - M01.1: Auth/onboarding, memberships, RBAC, private schema and RLS, tenant tests
