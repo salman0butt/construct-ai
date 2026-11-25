@@ -21,3 +21,5 @@
 | Prisma persistence smoke | synthetic transactional create/read/delete | source prepared; not run |
 
 | HTTP smoke diagnostic | real loopback fixtures for API contract, web status, invalid responses, timeout and redirect rejection | 7/7 tests passed; actual application command exit 1; browser E2E pending |
+
+| Readiness coordinator and local probe boundary | required checks, timeout/abort, concurrent deduplication, local DB/Redis config, private bucket metadata fixture and redirect rejection | 13/13 isolated tests; actual Nest/pg/Redis/Storage/worker registration unverified |

@@ -35,3 +35,5 @@ M00.3 preparation: read-only local database diagnostic with six passing isolated
 M00.3 preparation: Prisma v7 workspace, private synthetic probe model, adapter and smoke drafted; seven connection-selection tests passed. Client generation, actual migration, grants and smoke remain pending. Evidence: `docs/superpowers/evidence/M00.3-prisma-source.md`.
 
 M00.4 preparation: HTTP smoke diagnostic checks existing API liveness and web status. Seven real loopback fixture tests passed; actual applications unavailable. See `docs/superpowers/evidence/M00.4-http-smoke.md`. M00.4 stays open.
+
+M00.4 preparation: unified readiness core, loopback service adapters and Nest 200/503 endpoint drafted. Thirteen isolated tests passed (including Storage HTTP fixtures). No actual Nest service or dependency integration verified. Worker registration is not heartbeat. See `docs/superpowers/evidence/M00.4-readiness.md`.

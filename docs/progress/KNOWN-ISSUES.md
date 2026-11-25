@@ -12,3 +12,5 @@
 - Important / OPEN: Prisma 7 workspace source, config, schema and transactional smoke are draft; packages not resolved, client not generated, migration not created/applied, permissions not verified. Dedicated empty shadow DB and distinct actual login privileges must be verified before migration. No hosted service changes.
 
 - Important / OPEN: HTTP smoke utility verified against real loopback fixtures only. Actual application command exits 1 with web/API unavailable. Playwright, storage/worker readiness endpoint and integrated verification still pending. No runtime gate closed.
+
+- Important / OPEN: readiness endpoint and external adapters drafted but Nest build/HTTP/DB/Redis/BullMQ execution unverified. Worker registration is not a fresh heartbeat or queue round-trip. Private foundation Storage bucket not created. API-scoped env and legacy key handling need integration tests. No tenant-security claim.
