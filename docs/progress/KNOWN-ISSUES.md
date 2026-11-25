@@ -14,3 +14,5 @@
 - Important / OPEN: HTTP smoke utility verified against real loopback fixtures only. Actual application command exits 1 with web/API unavailable. Playwright, storage/worker readiness endpoint and integrated verification still pending. No runtime gate closed.
 
 - Important / OPEN: readiness endpoint and external adapters drafted but Nest build/HTTP/DB/Redis/BullMQ execution unverified. Worker registration is not a fresh heartbeat or queue round-trip. Private foundation Storage bucket not created. API-scoped env and legacy key handling need integration tests. No tenant-security claim.
+
+- Important / OPEN: worker heartbeat logic and Storage synthetic round-trip tested in isolation; actual Redis TTL and BullMQ worker lifecycle wiring, Supabase storage API response/cleanup semantics, legacy key branch and real services remain unverified. Lease is a shared local-worker indicator, not proof of processing. A failed or ambiguous upload/delete may leave a synthetic object; inspect only the reported object in the dedicated local bucket.

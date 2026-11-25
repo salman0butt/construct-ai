@@ -23,3 +23,6 @@
 | HTTP smoke diagnostic | real loopback fixtures for API contract, web status, invalid responses, timeout and redirect rejection | 7/7 tests passed; actual application command exit 1; browser E2E pending |
 
 | Readiness coordinator and local probe boundary | required checks, timeout/abort, concurrent deduplication, local DB/Redis config, private bucket metadata fixture and redirect rejection | 13/13 isolated tests; actual Nest/pg/Redis/Storage/worker registration unverified |
+
+| Worker lease | publish 15s TTL contract, paused/stopped behavior, deduplication, renewal recovery, count and TTL validation | 5/5 isolated tests; actual Redis/BullMQ integration pending |
+| Storage synthetic round-trip | private bucket, upload/download byte equality, exact-object cleanup, failed cleanup, hosted/key rejection | 5/5 real HTTP fixture tests; actual local Supabase not run |

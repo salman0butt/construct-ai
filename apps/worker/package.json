@@ -9,7 +9,7 @@
     "start": "node dist/main.js",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src test",
-    "test": "node --experimental-strip-types --test test/foundation.test.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
     "smoke": "node --experimental-strip-types src/smoke.ts"
   },
   "dependencies": {

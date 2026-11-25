@@ -37,3 +37,5 @@ M00.3 preparation: Prisma v7 workspace, private synthetic probe model, adapter a
 M00.4 preparation: HTTP smoke diagnostic checks existing API liveness and web status. Seven real loopback fixture tests passed; actual applications unavailable. See `docs/superpowers/evidence/M00.4-http-smoke.md`. M00.4 stays open.
 
 M00.4 preparation: unified readiness core, loopback service adapters and Nest 200/503 endpoint drafted. Thirteen isolated tests passed (including Storage HTTP fixtures). No actual Nest service or dependency integration verified. Worker registration is not heartbeat. See `docs/superpowers/evidence/M00.4-readiness.md`.
+
+M00.4 preparation: worker heartbeat lease and local-only Storage round-trip diagnostic; 10 isolated tests passed. Actual Redis renewal/expiry, BullMQ adapter and Supabase Storage execution pending. See `docs/superpowers/evidence/M00.4-heartbeat-storage.md`.

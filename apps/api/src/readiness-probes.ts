@@ -3,6 +3,7 @@ import IORedis from 'ioredis';
 import { Queue } from 'bullmq';
 import { databaseOptions, redisOptions, probeStorage } from './readiness-local';
 import type { ReadinessProbes } from './readiness';
+import { WORKER_HEARTBEAT_KEY, workerLeaseIsFresh } from './heartbeat';
 
 async function database(signal: AbortSignal): Promise<boolean> {
   const client = new Client({
@@ -46,7 +47,8 @@ async function redisProbe(signal: AbortSignal, worker: boolean): Promise<boolean
     queue = new Queue('construct-ai-foundation', { connection: client });
     queue.on('error', () => { /* Return only the readiness state. */ });
     const count = await queue.getWorkersCount();
-    return !signal.aborted && Number.isInteger(count) && count > 0;
+    const ttl = await client.pttl(WORKER_HEARTBEAT_KEY);
+    return !signal.aborted && workerLeaseIsFresh(count, ttl);
   } finally {
     try {
       if (queue) await queue.close();

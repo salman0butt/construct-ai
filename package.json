@@ -11,7 +11,7 @@
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "lint": "turbo run lint",
-    "test": "turbo run test && pnpm test:config && pnpm test:http && python3 -m unittest discover -s tests -v",
+    "test": "turbo run test && pnpm test:config && pnpm test:http && pnpm test:storage && python3 -m unittest discover -s tests -v",
     "verify:framework": "python3 scripts/verify_autonomous_framework.py",
     "preflight": "python3 scripts/preflight.py",
     "smoke:worker": "pnpm --filter @construct-ai/worker smoke",
@@ -22,7 +22,9 @@
     "db:generate": "pnpm --filter @construct-ai/database db:generate",
     "db:smoke": "pnpm --filter @construct-ai/database db:smoke",
     "smoke:http": "node --env-file-if-exists=.env scripts/http-smoke.mjs",
-    "test:http": "node --test tests/http-smoke.test.mjs"
+    "test:http": "node --test tests/http-smoke.test.mjs",
+    "smoke:storage": "node --env-file-if-exists=.env scripts/storage-smoke.mjs",
+    "test:storage": "node --test tests/storage-smoke.test.mjs"
   },
   "devDependencies": {
     "turbo": "^2.11.10",
