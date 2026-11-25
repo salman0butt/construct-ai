@@ -19,3 +19,5 @@ Deliver scope with tests and requirement evidence; no Critical/Important finding
 
 ## Evidence
 Repository initialization and framework drafted; no runtime evidence yet.
+
+Preflight checker implemented with 5 passing isolated unit tests. Actual target-machine preflight and installed Superpowers remain unverified. See `docs/superpowers/evidence/M00.1-preflight.md`.

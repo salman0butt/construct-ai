@@ -5,7 +5,8 @@ Use installed Superpowers executing-plans or subagent-driven-development as avai
 ## M00.1 Recovery and prerequisites
 - [ ] Run framework verifier and inspect its result; fix problems.
 - [ ] Load installed Superpowers; record availability.
-- [ ] Inspect node -v, pnpm -v, docker info, supabase --version, git status and available ports. Verify package compatibility with official docs; pin versions and commit lockfile. If Docker or CLI missing, report exact blocker, do not switch to cloud.
+- [x] Implement read-only prerequisite checker and test its error handling in isolated environment (evidence: docs/superpowers/evidence/M00.1-preflight.md).
+- [ ] Run `python3 scripts/preflight.py` on target machine. Inspect node -v, pnpm -v, docker info, supabase --version, git status and available ports. Verify package compatibility with official docs; pin versions and commit lockfile. If Docker or CLI missing, report exact blocker, do not switch to cloud.
 
 ## M00.2 Monorepo
 - [ ] Create pnpm workspace and Turbo tasks. Minimal Next.js App Router web, Nest API, worker package and shared config only as needed. Strict TypeScript, lint/format. Implement health and worker heartbeat with RED/GREEN where behavioral. No placeholder ERP.

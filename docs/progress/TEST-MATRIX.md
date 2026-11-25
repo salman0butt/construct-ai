@@ -2,6 +2,7 @@
 
 | Gate | Scope | State |
 |---|---|---|
+| Preflight checker | missing tools, timeout, versions, Redis alternative, exit status | 5 tests passed in isolated Python 3.13.5; target checks pending |
 | Framework verifier | governance, traceability and current ledger | pending local run |
 | Lint/typecheck/build | all workspaces | not implemented |
 | Unit | deterministic finance/permissions/AI schemas | planned |

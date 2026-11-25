@@ -2,7 +2,7 @@
 
 | Requirement | Milestone | Spec | Implementation | Tests | Verification | Status |
 |---|---|---|---|---|---|---|
-| R00 | M00 | M00 foundation | Pending | Pending | Not run | ACTIVE |
+| R00 | M00 | M00 foundation | scripts/preflight.py; governance files | tests/test_preflight.py | 5 isolated unit tests passed; target runtime pending | ACTIVE |
 | R01 | M01 | Pending activation | Pending | Pending | Not run | PLANNED |
 | R02 | M01 | Pending activation | Pending | Pending | Not run | PLANNED |
 | R03 | M02 | Pending activation | Pending | Pending | Not run | PLANNED |

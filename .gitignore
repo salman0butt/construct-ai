@@ -11,3 +11,6 @@ playwright-report/
 test-results/
 .DS_Store
 supabase/.temp/
+
+__pycache__/
+*.pyc
