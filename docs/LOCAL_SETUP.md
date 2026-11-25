@@ -41,3 +41,7 @@ After local Supabase initialization, Prisma schema creation, pgvector setup and 
 ## Prisma workspace (draft)
 
 Follow [database workspace instructions](../packages/database/README.md). Populate DATABASE_SHADOW_URL with a dedicated empty local database named construct_ai_shadow, owned by the distinct migration role; never use the app database as shadow. After verified install and actual local role setup, run pnpm db:validate, pnpm db:generate, review and apply real migration, pnpm db:check, pnpm --filter @construct-ai/database build and pnpm db:smoke. Do not reset any existing database. Prisma generation is required before database workspace typecheck/build. No migrations generated in this commit.
+
+## HTTP smoke
+
+After actual dependency installation, start the local API and web (`pnpm dev`) with matching ports. Run `pnpm smoke:http` from the root. Expect JSON with api and web both true only when the API liveness response matches the contract and server-rendered web status reports Responding. A nonzero exit means investigate the service or port; it is not a database or worker readiness check. The API port defaults to 4000 and the web port to 3000. Current web dev script uses port 3000, so leave WEB_PORT at 3000 unless you explicitly start web on another port. Run `pnpm test:http` to test the smoke diagnostic with loopback fixtures, not the actual app. Playwright and actual infrastructure readiness remain separate gates.

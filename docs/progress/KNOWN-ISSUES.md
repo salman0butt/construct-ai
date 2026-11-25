@@ -10,3 +10,5 @@
 - Important / OPEN: PostgreSQL diagnostic SQL not executed; isolated runner has no psql or local database. Six fixture tests cover the diagnostic, not actual schema/role security. Install a trusted local psql client and run db:check after provisioning private schema/roles and pgvector; verify RLS separately when tenant tables exist.
 
 - Important / OPEN: Prisma 7 workspace source, config, schema and transactional smoke are draft; packages not resolved, client not generated, migration not created/applied, permissions not verified. Dedicated empty shadow DB and distinct actual login privileges must be verified before migration. No hosted service changes.
+
+- Important / OPEN: HTTP smoke utility verified against real loopback fixtures only. Actual application command exits 1 with web/API unavailable. Playwright, storage/worker readiness endpoint and integrated verification still pending. No runtime gate closed.

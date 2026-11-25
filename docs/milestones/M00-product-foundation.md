@@ -33,3 +33,5 @@ M00.3 reversible preparation: local environment guard and CLI tested, Supabase s
 M00.3 preparation: read-only local database diagnostic with six passing isolated regression tests, actual missing-client failure verified. No real PostgreSQL query or Prisma migration performed. Evidence: `docs/superpowers/evidence/M00.3-db-readiness.md`.
 
 M00.3 preparation: Prisma v7 workspace, private synthetic probe model, adapter and smoke drafted; seven connection-selection tests passed. Client generation, actual migration, grants and smoke remain pending. Evidence: `docs/superpowers/evidence/M00.3-prisma-source.md`.
+
+M00.4 preparation: HTTP smoke diagnostic checks existing API liveness and web status. Seven real loopback fixture tests passed; actual applications unavailable. See `docs/superpowers/evidence/M00.4-http-smoke.md`. M00.4 stays open.

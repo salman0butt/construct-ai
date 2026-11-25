@@ -26,6 +26,7 @@ Draft source may be prepared while target preflight is blocked; prerequisite che
 - [ ] Document startup/setup/status/stop, migration and synthetic seed; destructive reset needs confirmation.
 
 ## M00.4 Smoke
+- [x] Implement dependency-free HTTP liveness smoke with real loopback fixture tests (7 passed); actual application execution pending.
 - [ ] Add integration smoke for API DB/Redis/storage/worker health and Playwright web→API. Test failure paths. Record exact SHA and exit codes.
 
 ## M00.5 Closeout
