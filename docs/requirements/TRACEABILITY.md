@@ -2,7 +2,7 @@
 
 | Requirement | Milestone | Spec | Implementation | Tests | Verification | Status |
 |---|---|---|---|---|---|---|
-| R00 | M00 | M00 foundation | scripts/preflight.py; governance verifier | tests/test_preflight.py; tests/test_framework.py | 5 prior preflight tests, 8 framework fixture tests passed separately; target runtime pending | ACTIVE |
+| R00 | M00 | M00 foundation | scripts/preflight.py; governance verifier; draft web/API workspaces | tests/test_preflight.py; tests/test_framework.py; apps/api/test/health.test.ts | 5 prior preflight, 8 prior framework fixture and 3 API unit tests passed in separate isolated runs; runtime pending | ACTIVE |
 | R01 | M01 | Pending activation | Pending | Pending | Not run | PLANNED |
 | R02 | M01 | Pending activation | Pending | Pending | Not run | PLANNED |
 | R03 | M02 | Pending activation | Pending | Pending | Not run | PLANNED |

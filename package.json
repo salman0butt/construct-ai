@@ -1,0 +1,22 @@
+{
+  "name": "construct-ai",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@12.3.4",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test && python3 -m unittest discover -s tests -v",
+    "verify:framework": "python3 scripts/verify_autonomous_framework.py",
+    "preflight": "python3 scripts/preflight.py"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.10",
+    "typescript": "5.9.3"
+  }
+}

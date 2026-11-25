@@ -10,6 +10,9 @@ Use installed Superpowers executing-plans or subagent-driven-development as avai
 - [ ] Run `python3 scripts/preflight.py` on target machine. Inspect node -v, pnpm -v, docker info, supabase --version, git status and available ports. Verify package compatibility with official docs; pin versions and commit lockfile. If Docker or CLI missing, report exact blocker, do not switch to cloud.
 
 ## M00.2 Monorepo
+
+Draft source may be prepared while target preflight is blocked; prerequisite checks still gate package resolution, local startup, verification and milestone closeout. No move to M01.
+- [x] Draft minimal web/API source and workspace manifests; verify dependency-free API health/config tests (3 passed).
 - [ ] Create pnpm workspace and Turbo tasks. Minimal Next.js App Router web, Nest API, worker package and shared config only as needed. Strict TypeScript, lint/format. Implement health and worker heartbeat with RED/GREEN where behavioral. No placeholder ERP.
 - [ ] Run install, typecheck, lint, tests and build; record evidence.
 
