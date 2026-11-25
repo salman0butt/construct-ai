@@ -21,3 +21,5 @@
 
 - RESOLVED IN SOURCE / verified focused tests: root config previously accepted missing/unsafe shadow URL, same runtime/migration role, different database targets, missing credentials and public shadow URL exposure. Shared database validator now checks all three; actual roles and shadow database contents remain unverified. See M00.5 review evidence.
 - Important / OPEN: partial author review only. No independent full-branch review, verified dependencies or local full-stack test run. API and worker loopback parsers still duplicated; reconcile after verified runtime, before domain work. Do not interpret config syntax as authorization or actual isolation.
+
+- RESOLVED IN SOURCE / fixture-tested: frontend server-side health fetch previously followed redirects, falsely accepting another service and permitting escape from loopback. Now uses redirect:error. Four tests against real local HTTP fixtures passed. Actual Next.js runtime/E2E not verified.

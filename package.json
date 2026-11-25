@@ -11,7 +11,7 @@
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "lint": "turbo run lint",
-    "test": "turbo run test && pnpm test:config && pnpm test:http && pnpm test:storage && python3 -m unittest discover -s tests -v",
+    "test": "turbo run test && pnpm test:config && pnpm test:http && pnpm test:web-health && pnpm test:storage && python3 -m unittest discover -s tests -v",
     "verify:framework": "python3 scripts/verify_autonomous_framework.py",
     "preflight": "python3 scripts/preflight.py",
     "smoke:worker": "pnpm --filter @construct-ai/worker smoke",
@@ -27,7 +27,8 @@
     "test:storage": "node --test tests/storage-smoke.test.mjs",
     "e2e": "playwright test",
     "e2e:degraded": "E2E_SCENARIO=degraded playwright test",
-    "e2e:outage": "E2E_SCENARIO=outage playwright test"
+    "e2e:outage": "E2E_SCENARIO=outage playwright test",
+    "test:web-health": "node --experimental-strip-types --test tests/web-health.test.ts"
   },
   "devDependencies": {
     "turbo": "^2.11.10",

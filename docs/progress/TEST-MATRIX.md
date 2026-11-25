@@ -32,3 +32,5 @@
 | Browser E2E | healthy/degraded infrastructure, desktop/mobile liveness, stopped API | scenario source drafted; real local services and Playwright package required; not run |
 
 | Configuration review regressions | shadow URL, role separation, same database, required password, public leak prevention | 6 new tests; RED 5 fail/1 pass; focused GREEN 24/24 including 18 existing tests; full suite not rerun |
+
+| Frontend network boundary | correct liveness, redirect rejection with no destination request, wrong identity, HTTP errors and malformed input | RED 1 fail/3 pass; GREEN 4/4; combined focused suite 28/28; pnpm test unavailable exit 127 |

@@ -33,5 +33,6 @@ Draft source may be prepared while target preflight is blocked; prerequisite che
 - [ ] Add integration smoke for API DB/Redis/storage/worker health and Playwright web→API. Test failure paths. Record exact SHA and exit codes.
 
 ## M00.5 Closeout
+- [x] Partial network-boundary review; reject frontend API liveness redirects, 4 new fixture tests and 28 focused tests passed. Full runtime and independent review pending.
 - [x] Partial author review of configuration boundary; correct shadow/role/credential validation and public shadow URL leak checks (24 focused tests passed). Independent whole-branch review and full verification still required.
 - [ ] Review independently where available, resolve Critical/Important findings, run all applicable verification on final head. Update ledger, traceability, test matrix, progress and PR. Wait for explicit merge authorization; after integration verify main before activating M01.
