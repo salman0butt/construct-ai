@@ -30,3 +30,5 @@
 | Combined dependency-free suite | all existing Node and Python tests | 56 Node + 19 Python passed together in isolated reconstruction; 27 files matched base tree |
 | Swagger/OpenAPI | live UI and generated JSON, 200/503 contracts | source and browser assertions drafted; not run |
 | Browser E2E | healthy/degraded infrastructure, desktop/mobile liveness, stopped API | scenario source drafted; real local services and Playwright package required; not run |
+
+| Configuration review regressions | shadow URL, role separation, same database, required password, public leak prevention | 6 new tests; RED 5 fail/1 pass; focused GREEN 24/24 including 18 existing tests; full suite not rerun |

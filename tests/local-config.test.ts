@@ -5,6 +5,7 @@ import { validateLocalConfig } from '../scripts/local-config.ts';
 const valid = {
   DATABASE_URL: 'postgresql://app:local-password@127.0.0.1:54322/postgres',
   DATABASE_MIGRATION_URL: 'postgresql://migrator:local-password@localhost:54322/postgres?schema=construct_ai',
+  DATABASE_SHADOW_URL: 'postgresql://migrator:local-password@localhost:54322/construct_ai_shadow',
   SUPABASE_URL: 'http://127.0.0.1:54321',
   SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_example',
   SUPABASE_SECRET_KEY: 'sb_secret_example',
@@ -22,7 +23,7 @@ test('accepts valid local services with external providers disabled by default',
 
 test('reports missing required database, API and key configuration', () => {
   const missing = validateLocalConfig({}).map(issue => issue.variable);
-  for (const key of ['DATABASE_URL', 'DATABASE_MIGRATION_URL', 'SUPABASE_URL', 'SUPABASE_PUBLISHABLE_KEY', 'SUPABASE_SECRET_KEY']) {
+  for (const key of ['DATABASE_URL', 'DATABASE_MIGRATION_URL', 'DATABASE_SHADOW_URL', 'SUPABASE_URL', 'SUPABASE_PUBLISHABLE_KEY', 'SUPABASE_SECRET_KEY']) {
     assert.ok(missing.includes(key));
   }
 });

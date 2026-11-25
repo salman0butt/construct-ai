@@ -1,3 +1,5 @@
+import { DatabaseConnectionError, migrationConnections, parseConnection } from '../packages/database/src/connections.ts';
+
 export type ConfigIssue = { variable: string; message: string };
 type Env = Record<string, string | undefined>;
 
@@ -8,14 +10,6 @@ function parsed(raw: string | undefined): URL | undefined {
 
 function localHost(url: URL): boolean {
   return url.hostname === 'localhost' || url.hostname === '127.0.0.1';
-}
-
-function localDatabase(raw: string | undefined): boolean {
-  const url = parsed(raw);
-  return !!url && (url.protocol === 'postgres:' || url.protocol === 'postgresql:') &&
-    localHost(url) && !!url.port && Number(url.port) > 0 && !!url.username &&
-    /^\/[A-Za-z0-9_-]+$/.test(url.pathname) &&
-    (!raw?.includes('?') || url.search === '?schema=construct_ai');
 }
 
 function localHttp(raw: string | undefined): boolean {
@@ -48,8 +42,20 @@ export function validateLocalConfig(env: Env): ConfigIssue[] {
   const require = (ok: boolean, variable: string, message: string) => {
     if (!ok) issues.push({ variable, message });
   };
-  for (const name of ['DATABASE_URL', 'DATABASE_MIGRATION_URL']) {
-    require(localDatabase(env[name]), name, 'Use a loopback PostgreSQL URI with explicit port and no connection overrides; only schema=construct_ai is allowed.');
+  const databaseNames = ['DATABASE_URL', 'DATABASE_MIGRATION_URL', 'DATABASE_SHADOW_URL'];
+  for (const name of databaseNames) {
+    try { parseConnection(env, name); }
+    catch (error) {
+      issues.push({ variable: name, message: error instanceof DatabaseConnectionError ? error.message : 'Invalid local database configuration.' });
+    }
+  }
+  if (!issues.length) {
+    try { migrationConnections(env); }
+    catch (error) {
+      issues.push(error instanceof DatabaseConnectionError
+        ? { variable: error.variable, message: error.message }
+        : { variable: 'DATABASE_MIGRATION_URL', message: 'Invalid local migration configuration.' });
+    }
   }
   require(localHttp(env.SUPABASE_URL), 'SUPABASE_URL', 'Use the local HTTP origin and explicit port from Supabase CLI.');
   require(keyMatches(env.SUPABASE_PUBLISHABLE_KEY, 'publishable'), 'SUPABASE_PUBLISHABLE_KEY', 'Use the local publishable or legacy anon key.');
@@ -63,9 +69,9 @@ export function validateLocalConfig(env: Env): ConfigIssue[] {
   if (provider === 'ollama' || env.OLLAMA_BASE_URL !== undefined) {
     require(localHttp(env.OLLAMA_BASE_URL ?? 'http://127.0.0.1:11434'), 'OLLAMA_BASE_URL', 'Use a loopback HTTP origin with explicit port.');
   }
-  const secrets = [env.SUPABASE_SECRET_KEY, env.DATABASE_URL, env.DATABASE_MIGRATION_URL, env.OPENAI_API_KEY, env.GOOGLE_GENERATIVE_AI_API_KEY].filter((value): value is string => !!value);
+  const secrets = [env.SUPABASE_SECRET_KEY, env.DATABASE_URL, env.DATABASE_MIGRATION_URL, env.DATABASE_SHADOW_URL, env.OPENAI_API_KEY, env.GOOGLE_GENERATIVE_AI_API_KEY].filter((value): value is string => !!value);
   for (const [name, value] of Object.entries(env)) {
-    if (name.startsWith('NEXT_PUBLIC_') && (/(?:SECRET|SERVICE_ROLE|DATABASE_URL|API_KEY|PASSWORD)/.test(name) || !!value && secrets.some(secret => value.includes(secret)))) {
+    if (name.startsWith('NEXT_PUBLIC_') && (/(?:SECRET|SERVICE_ROLE|DATABASE_URL|DATABASE_MIGRATION_URL|DATABASE_SHADOW_URL|API_KEY|PASSWORD)/.test(name) || !!value && secrets.some(secret => value.includes(secret)))) {
       issues.push({ variable: name, message: 'Remove server-only values from public client configuration.' });
     }
   }

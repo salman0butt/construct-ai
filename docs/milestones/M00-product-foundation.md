@@ -41,3 +41,5 @@ M00.4 preparation: unified readiness core, loopback service adapters and Nest 20
 M00.4 preparation: worker heartbeat lease and local-only Storage round-trip diagnostic; 10 isolated tests passed. Actual Redis renewal/expiry, BullMQ adapter and Supabase Storage execution pending. See `docs/superpowers/evidence/M00.4-heartbeat-storage.md`.
 
 M00.4 preparation: Swagger/OpenAPI configuration and Playwright scenarios drafted. Fresh combined dependency-free suite passed 75 tests; all 27 reconstructed files matched the base Git tree. Actual Swagger and browser tests not run. See `docs/superpowers/evidence/M00.4-swagger-e2e.md`. M00 stays open.
+
+M00.5 partial author review: aligned root configuration guard with Prisma migration boundary; six new regressions and 18 existing focused tests passed. No independent review or actual runtime gates completed. Evidence: `docs/superpowers/evidence/M00.5-config-review.md`.

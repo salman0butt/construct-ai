@@ -16,7 +16,7 @@
     "preflight": "python3 scripts/preflight.py",
     "smoke:worker": "pnpm --filter @construct-ai/worker smoke",
     "local:config": "node --env-file-if-exists=.env --experimental-strip-types scripts/check-local-config.ts",
-    "test:config": "node --experimental-strip-types --test tests/local-config.test.ts",
+    "test:config": "node --experimental-strip-types --test tests/local-config.test.ts tests/config-review.test.ts",
     "db:check": "node --env-file-if-exists=.env -e \"const {spawnSync}=require('node:child_process'); const r=spawnSync('python3',['scripts/db_readiness.py'],{stdio:'inherit'}); process.exitCode=r.status ?? 1\"",
     "db:validate": "pnpm --filter @construct-ai/database db:validate",
     "db:generate": "pnpm --filter @construct-ai/database db:generate",

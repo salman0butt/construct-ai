@@ -1,9 +1,18 @@
 type Env = Record<string, string | undefined>;
 const SCHEMA = 'construct_ai';
 
-function parseConnection(env: Env, name: string): URL {
+export class DatabaseConnectionError extends Error {
+  readonly variable: string;
+
+  constructor(variable: string, message: string) {
+    super(message);
+    this.variable = variable;
+  }
+}
+
+export function parseConnection(env: Env, name: string): URL {
   const raw = env[name];
-  const invalid = () => new Error(`${name} must be a credentialed loopback PostgreSQL URL with an explicit port and optional schema=construct_ai`);
+  const invalid = () => new DatabaseConnectionError(name, `${name} must be a credentialed loopback PostgreSQL URL with an explicit port and optional schema=construct_ai`);
   if (!raw || /[\s\\#]/.test(raw)) throw invalid();
   let url: URL;
   try {
@@ -30,14 +39,14 @@ export function migrationConnections(env: Env) {
   const migration = parseConnection(env, 'DATABASE_MIGRATION_URL');
   const shadow = parseConnection(env, 'DATABASE_SHADOW_URL');
   if (decodeURIComponent(runtime.username) === decodeURIComponent(migration.username)) {
-    throw new Error('Runtime and migration roles must be distinct');
+    throw new DatabaseConnectionError('DATABASE_MIGRATION_URL', 'Runtime and migration roles must be distinct');
   }
   if (runtime.port !== migration.port || runtime.pathname !== migration.pathname) {
-    throw new Error('Runtime and migration must target the same local database');
+    throw new DatabaseConnectionError('DATABASE_MIGRATION_URL', 'Runtime and migration must target the same local database');
   }
   if (shadow.port !== migration.port || shadow.pathname !== '/construct_ai_shadow' ||
       shadow.pathname === migration.pathname || decodeURIComponent(shadow.username) !== decodeURIComponent(migration.username)) {
-    throw new Error('DATABASE_SHADOW_URL must target the dedicated construct_ai_shadow database with the migration role');
+    throw new DatabaseConnectionError('DATABASE_SHADOW_URL', 'DATABASE_SHADOW_URL must target the dedicated construct_ai_shadow database with the migration role');
   }
   migration.search = shadow.search = `?schema=${SCHEMA}`;
   return { url: migration.toString(), shadowDatabaseUrl: shadow.toString() };
