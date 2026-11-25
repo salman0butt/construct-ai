@@ -13,7 +13,8 @@ Use installed Superpowers executing-plans or subagent-driven-development as avai
 
 Draft source may be prepared while target preflight is blocked; prerequisite checks still gate package resolution, local startup, verification and milestone closeout. No move to M01.
 - [x] Draft minimal web/API source and workspace manifests; verify dependency-free API health/config tests (3 passed).
-- [ ] Create pnpm workspace and Turbo tasks. Minimal Next.js App Router web, Nest API, worker package and shared config only as needed. Strict TypeScript, lint/format. Implement health and worker heartbeat with RED/GREEN where behavioral. No placeholder ERP.
+- [x] Draft worker probe contract and unit tests (5 pass), BullMQ adapter and smoke source, local Redis Compose; integration verification pending.
+- [ ] Verify pnpm workspace and Turbo tasks. Minimal Next.js App Router web, Nest API, worker package and shared config only as needed. Strict TypeScript, lint/format. Implement health and worker heartbeat with RED/GREEN where behavioral. No placeholder ERP.
 - [ ] Run install, typecheck, lint, tests and build; record evidence.
 
 ## M00.3 Local infrastructure

@@ -25,3 +25,5 @@ Preflight checker implemented with 5 passing isolated unit tests. Actual target-
 Governance verifier: eight isolated regression tests passed; actual checkout and target runtime remain pending. See `docs/superpowers/evidence/M00.1-framework.md`.
 
 M00.2 preparation: web/API and workspace source drafted with three passing isolated health/config tests. No package installation or runtime verification. M00.1 still open; M00.2 not complete. Evidence: `docs/superpowers/evidence/M00.2-api-source.md`.
+
+M00.2 reversible preparation: BullMQ worker, local Redis Compose and bounded round-trip smoke drafted. Five isolated worker unit tests passed; real queue, container, full suite and target installation not verified. See `docs/superpowers/evidence/M00.2-worker-source.md`. M00.1/M00.2 remain open.

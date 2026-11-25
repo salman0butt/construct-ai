@@ -2,7 +2,7 @@
 
 Local-first AI-native construction ERP: projects, vendors, invoice intelligence, financial workflows, document RAG and Atlas AI.
 
-**Status:** M00 product foundation in progress. Initial web/API source drafted; three isolated API helper tests pass. No framework runtime or product feature verified yet.
+**Status:** M00 product foundation in progress. Initial web/API/worker source and Redis Compose drafted; API and worker contract tests have passed in separate isolated runs. No framework runtime or product feature verified yet.
 
 ## Start here
 - [Codex entry point](CODEX-START-HERE.md)

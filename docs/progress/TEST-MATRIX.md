@@ -5,6 +5,8 @@
 | Preflight checker | missing tools, timeout, versions, Redis alternative, exit status | 5 tests passed in isolated Python 3.13.5; target checks pending |
 | Framework verifier | governance, traceability and current ledger | 8 fixture tests passed; actual checkout run pending |
 | API liveness/port unit | pure TypeScript | 3/3 isolated Node tests passed |
+| Worker probe contract | local Redis URL validation and synthetic job handling | 5/5 isolated Node tests passed; BullMQ adapter pending |
+| Redis/BullMQ round-trip | queue, separate worker, nonce result, bounded failure | smoke source drafted; not run |
 | Lint/typecheck/build | all workspaces | scripts drafted; dependency install and actual run pending |
 | Unit | deterministic finance/permissions/AI schemas | planned |
 | Integration | DB/queue/auth/tenancy/approval recovery | planned |
