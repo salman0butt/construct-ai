@@ -12,3 +12,5 @@
 | Integration | DB/queue/auth/tenancy/approval recovery | planned |
 | E2E | invoice-to-approval, RAG, Atlas, tenant isolation | planned |
 | AI eval | extraction/RAG/tools/guardrails | planned |
+
+| Local configuration guard | loopback endpoint checks, key roles, flags and public secret leaks | 11/11 isolated Node tests; CLI valid and invalid exit paths checked; actual environment pending |

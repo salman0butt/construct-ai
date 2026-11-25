@@ -18,6 +18,7 @@ Draft source may be prepared while target preflight is blocked; prerequisite che
 - [ ] Run install, typecheck, lint, tests and build; record evidence.
 
 ## M00.3 Local infrastructure
+- [x] Implement standalone local config guard and CLI; 11 isolated tests and two CLI exit paths verified. Document Supabase/Prisma ownership and correct BullMQ v6 missing Redis dependency; actual package resolution pending.
 - [ ] Initialize local Supabase (verify CLI help/docs), private app schema/migration strategy; local Redis compose bound to loopback. Validate env server/client separation. Start services and check connectivity. No real data/secrets.
 - [ ] Document startup/setup/status/stop, migration and synthetic seed; destructive reset needs confirmation.
 

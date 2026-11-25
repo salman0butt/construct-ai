@@ -11,10 +11,12 @@
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "lint": "turbo run lint",
-    "test": "turbo run test && python3 -m unittest discover -s tests -v",
+    "test": "turbo run test && pnpm test:config && python3 -m unittest discover -s tests -v",
     "verify:framework": "python3 scripts/verify_autonomous_framework.py",
     "preflight": "python3 scripts/preflight.py",
-    "smoke:worker": "pnpm --filter @construct-ai/worker smoke"
+    "smoke:worker": "pnpm --filter @construct-ai/worker smoke",
+    "local:config": "node --env-file-if-exists=.env --experimental-strip-types scripts/check-local-config.ts",
+    "test:config": "node --experimental-strip-types --test tests/local-config.test.ts"
   },
   "devDependencies": {
     "turbo": "^2.11.10",

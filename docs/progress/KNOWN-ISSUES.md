@@ -4,3 +4,5 @@
 - Important / OPEN: Superpowers skills loaded in this session; target-machine installation and full execution workspace not verified. Load applicable installed skills on local agent; document if unavailable.
 - Important / OPEN: Original chat PRD consolidated into requirement baseline; compare detailed prior PRD if needed before implementing each capability.
 - Important / OPEN: provisional web/API/worker manifests and source are not installed or framework-tested. No lockfile yet. Verify supported patched versions, peer compatibility, package policy, build and runtime on target. Redis Compose and BullMQ integration smoke not run. Supabase init, database/Prisma and storage readiness pending. No product-domain implementation exists yet. No CI, independent review, database migrations or local service verification. Do not mark M00 complete.
+
+- Important / OPEN: local config guard verified as a standalone diagnostic only; not a runtime authorization or connectivity check. Actual CLI-generated Supabase config, Prisma and storage setup pending; do not infer readiness. BullMQ v6 requires explicit ioredis, added provisional range but registry resolution unverified.
