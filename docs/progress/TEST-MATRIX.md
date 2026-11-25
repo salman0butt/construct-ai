@@ -16,3 +16,6 @@
 | Local configuration guard | loopback endpoint checks, key roles, flags and public secret leaks | 11/11 isolated Node tests; CLI valid and invalid exit paths checked; actual environment pending |
 
 | Database foundation diagnostic | local connection, read-only query invocation, five required checks, fail-closed parsing and error redaction | 6/6 isolated tests with subprocess mocked; actual CLI exits 1 for missing psql; SQL integration pending |
+
+| Prisma connection selection | runtime/migration role separation, local target and isolated shadow, credential-safe failure | 7/7 isolated tests passed; Prisma client and migration pending |
+| Prisma persistence smoke | synthetic transactional create/read/delete | source prepared; not run |

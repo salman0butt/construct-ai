@@ -1,0 +1,20 @@
+// Foundation-only synthetic record; domain models begin in M01.
+generator client {
+  provider            = "prisma-client"
+  output              = "../src/generated/prisma"
+  moduleFormat        = "esm"
+  importFileExtension = "ts"
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas  = ["construct_ai"]
+}
+
+model FoundationProbe {
+  id     String @id @db.Uuid
+  marker String
+
+  @@map("foundation_probe")
+  @@schema("construct_ai")
+}

@@ -18,6 +18,7 @@ Draft source may be prepared while target preflight is blocked; prerequisite che
 - [ ] Run install, typecheck, lint, tests and build; record evidence.
 
 ## M00.3 Local infrastructure
+- [x] Draft Prisma workspace, private probe model, guarded runtime/migration/shadow settings and smoke source; seven isolated connection-selection tests passed. Actual package install, schema validation, generation, migration and round-trip pending.
 - [x] Implement read-only database foundation diagnostic and regression tests; 6 isolated methods passed. Live SQL query pending local PostgreSQL/psql.
 - [ ] Generate actual Prisma schema/config/client and migrations with installed versions; configure private schema, separate runtime/migration roles and pgvector. Run pnpm db:check against local PostgreSQL; verify actual permissions and data API exposure separately.
 - [x] Implement standalone local config guard and CLI; 11 isolated tests and two CLI exit paths verified. Document Supabase/Prisma ownership and correct BullMQ v6 missing Redis dependency; actual package resolution pending.
