@@ -2,7 +2,7 @@
 
 | Requirement | Milestone | Spec | Implementation | Tests | Verification | Status |
 |---|---|---|---|---|---|---|
-| R00 | M00 | M00 foundation | scripts/preflight.py; governance verifier; draft web/API/worker workspaces and Redis Compose; local configuration guard | tests/test_preflight.py; tests/test_framework.py; apps/api/test/health.test.ts; apps/worker/test/foundation.test.ts; tests/local-config.test.ts | 5 prior preflight, 8 prior framework fixture and 3 API, 5 worker and 11 local config unit tests passed in separate isolated runs; runtime pending | ACTIVE |
+| R00 | M00 | M00 foundation | scripts/preflight.py; governance verifier; draft web/API/worker workspaces and Redis Compose; local configuration guard; read-only DB diagnostic | tests/test_preflight.py; tests/test_framework.py; apps/api/test/health.test.ts; apps/worker/test/foundation.test.ts; tests/local-config.test.ts; tests/test_db_readiness.py | 5 prior preflight, 8 prior framework fixture and 3 API, 5 worker and 11 local config and 6 DB diagnostic unit tests passed in separate isolated runs; runtime pending | ACTIVE |
 | R01 | M01 | Pending activation | Pending | Pending | Not run | PLANNED |
 | R02 | M01 | Pending activation | Pending | Pending | Not run | PLANNED |
 | R03 | M02 | Pending activation | Pending | Pending | Not run | PLANNED |

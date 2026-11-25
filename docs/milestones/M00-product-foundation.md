@@ -29,3 +29,5 @@ M00.2 preparation: web/API and workspace source drafted with three passing isola
 M00.2 reversible preparation: BullMQ worker, local Redis Compose and bounded round-trip smoke drafted. Five isolated worker unit tests passed; real queue, container, full suite and target installation not verified. See `docs/superpowers/evidence/M00.2-worker-source.md`. M00.1/M00.2 remain open.
 
 M00.3 reversible preparation: local environment guard and CLI tested, Supabase setup and migration ownership documented, explicit BullMQ v6 ioredis dependency added. Eleven isolated unit tests passed. Actual local service initialization and dependency resolution remain blocked. See `docs/superpowers/evidence/M00.3-local-config.md`.
+
+M00.3 preparation: read-only local database diagnostic with six passing isolated regression tests, actual missing-client failure verified. No real PostgreSQL query or Prisma migration performed. Evidence: `docs/superpowers/evidence/M00.3-db-readiness.md`.
