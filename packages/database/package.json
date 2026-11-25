@@ -1,0 +1,27 @@
+{
+  "name": "@construct-ai/database",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db:validate": "prisma validate --config prisma.config.ts",
+    "db:generate": "prisma generate --config prisma.config.ts",
+    "db:smoke": "node --env-file-if-exists=../../.env dist/smoke.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test prisma.config.ts",
+    "test": "node --experimental-strip-types --test test/connections.test.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "7.10.1",
+    "@prisma/adapter-pg": "7.10.1",
+    "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "prisma": "7.10.1",
+    "@types/node": "^24.10.0",
+    "typescript": "5.9.3",
+    "eslint": "^9.39.0",
+    "typescript-eslint": "^8.74.0"
+  }
+}

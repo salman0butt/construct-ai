@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #172b3a; background: #f4f7f7; }
+body { margin: 0; }
+.shell { max-width: 1040px; margin: auto; padding: 0 28px 72px; }
+.header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 0; border-bottom: 1px solid #d9e3e4; }
+.brand { font-size: 1.45rem; font-weight: 800; letter-spacing: -.05em; }
+.brand span { color: #087c73; }
+.environment { color: #48616a; font-size: .86rem; }
+.hero { padding: 72px 0 40px; max-width: 760px; }
+.eyebrow { font-size: .76rem; letter-spacing: .13em; font-weight: 700; color: #08756d; }
+h1 { margin: 16px 0; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; letter-spacing: -.055em; }
+.intro { color: #48616a; font-size: 1.1rem; line-height: 1.7; max-width: 660px; }
+.panel { border: 1px solid #d9e3e4; background: white; border-radius: 16px; padding: 26px; }
+.panel h2 { margin: 0 0 24px; font-size: 1.15rem; }
+.service { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.service p, .note { font-size: .92rem; color: #48616a; line-height: 1.6; }
+.live, .offline { font-weight: 650; border-radius: 6px; padding: 7px 12px; font-size: .85rem; }
+.live { color: #066049; background: #e1f4ed; }
+.offline { color: #9b3824; background: #fae8e2; }
+.note { border-top: 1px solid #d9e3e4; padding-top: 18px; margin-bottom: 0; }
+@media (max-width: 600px) { .shell { padding-inline: 18px; } .hero { padding-top: 44px; } .panel { padding: 20px; } }
