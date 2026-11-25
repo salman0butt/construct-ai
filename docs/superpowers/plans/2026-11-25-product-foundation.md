@@ -3,6 +3,7 @@
 Use installed Superpowers executing-plans or subagent-driven-development as available. Work on feat/product-foundation; inspect actual PR and Git state first. No merge without authorization.
 
 ## M00.1 Recovery and prerequisites
+- [x] Harden framework verifier with regression fixtures (8 passed; see evidence/M00.1-framework.md).
 - [ ] Run framework verifier and inspect its result; fix problems.
 - [ ] Load installed Superpowers; record availability.
 - [x] Implement read-only prerequisite checker and test its error handling in isolated environment (evidence: docs/superpowers/evidence/M00.1-preflight.md).
