@@ -24,10 +24,14 @@
     "smoke:http": "node --env-file-if-exists=.env scripts/http-smoke.mjs",
     "test:http": "node --test tests/http-smoke.test.mjs",
     "smoke:storage": "node --env-file-if-exists=.env scripts/storage-smoke.mjs",
-    "test:storage": "node --test tests/storage-smoke.test.mjs"
+    "test:storage": "node --test tests/storage-smoke.test.mjs",
+    "e2e": "playwright test",
+    "e2e:degraded": "E2E_SCENARIO=degraded playwright test",
+    "e2e:outage": "E2E_SCENARIO=outage playwright test"
   },
   "devDependencies": {
     "turbo": "^2.11.10",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "@playwright/test": "1.65.1"
   }
 }

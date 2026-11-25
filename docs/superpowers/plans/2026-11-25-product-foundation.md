@@ -26,6 +26,7 @@ Draft source may be prepared while target preflight is blocked; prerequisite che
 - [ ] Document startup/setup/status/stop, migration and synthetic seed; destructive reset needs confirmation.
 
 ## M00.4 Smoke
+- [x] Draft Swagger/OpenAPI and Playwright connected/degraded/API-outage scenarios. Rerun existing dependency-free suite (75 pass); actual framework/browser integration remains pending.
 - [x] Draft expiring worker heartbeat and synthetic Storage upload/read/delete smoke; 10 isolated tests passed; real Redis expiry, recovery and Storage persistence pending.
 - [x] Prepare readiness coordinator and local service adapter source; 13 isolated tests passed. Actual endpoint status, DB/Redis/Storage/worker integration pending; worker registration is not heartbeat.
 - [x] Implement dependency-free HTTP liveness smoke with real loopback fixture tests (7 passed); actual application execution pending.

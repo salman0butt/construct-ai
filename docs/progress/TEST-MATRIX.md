@@ -26,3 +26,7 @@
 
 | Worker lease | publish 15s TTL contract, paused/stopped behavior, deduplication, renewal recovery, count and TTL validation | 5/5 isolated tests; actual Redis/BullMQ integration pending |
 | Storage synthetic round-trip | private bucket, upload/download byte equality, exact-object cleanup, failed cleanup, hosted/key rejection | 5/5 real HTTP fixture tests; actual local Supabase not run |
+
+| Combined dependency-free suite | all existing Node and Python tests | 56 Node + 19 Python passed together in isolated reconstruction; 27 files matched base tree |
+| Swagger/OpenAPI | live UI and generated JSON, 200/503 contracts | source and browser assertions drafted; not run |
+| Browser E2E | healthy/degraded infrastructure, desktop/mobile liveness, stopped API | scenario source drafted; real local services and Playwright package required; not run |

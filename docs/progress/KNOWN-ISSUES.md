@@ -16,3 +16,5 @@
 - Important / OPEN: readiness endpoint and external adapters drafted but Nest build/HTTP/DB/Redis/BullMQ execution unverified. Worker registration is not a fresh heartbeat or queue round-trip. Private foundation Storage bucket not created. API-scoped env and legacy key handling need integration tests. No tenant-security claim.
 
 - Important / OPEN: worker heartbeat logic and Storage synthetic round-trip tested in isolation; actual Redis TTL and BullMQ worker lifecycle wiring, Supabase storage API response/cleanup semantics, legacy key branch and real services remain unverified. Lease is a shared local-worker indicator, not proof of processing. A failed or ambiguous upload/delete may leave a synthetic object; inspect only the reported object in the dedicated local bucket.
+
+- Important / OPEN: Swagger and Playwright configuration and browser scenarios are draft. No package resolution, Nest compile, Swagger route execution, browser install or app E2E execution. Verify candidate dependency versions and peer compatibility. Fresh combined dependency-free suite passed (75 tests, 27 matching base blobs), but this is not the full workspace suite or runtime evidence.
