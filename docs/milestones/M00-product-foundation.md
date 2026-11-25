@@ -45,3 +45,5 @@ M00.4 preparation: Swagger/OpenAPI configuration and Playwright scenarios drafte
 M00.5 partial author review: aligned root configuration guard with Prisma migration boundary; six new regressions and 18 existing focused tests passed. No independent review or actual runtime gates completed. Evidence: `docs/superpowers/evidence/M00.5-config-review.md`.
 
 M00.5 partial author review: frontend server-side health probe now rejects redirects; four new real-loopback HTTP tests and 24 prior focused tests passed. Full suite blocked by missing pnpm. See `docs/superpowers/evidence/M00.5-network-review.md`. Milestone remains active.
+
+M00.5 partial author review: preflight now enforces stable Node 24 and requires psql, matching current declared runtime and database diagnostic. Nine focused tests passed; actual isolated preflight failed seven required checks. See `docs/superpowers/evidence/M00.5-preflight-review.md`. Target prerequisite gate remains open.

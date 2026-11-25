@@ -23,3 +23,5 @@
 - Important / OPEN: partial author review only. No independent full-branch review, verified dependencies or local full-stack test run. API and worker loopback parsers still duplicated; reconcile after verified runtime, before domain work. Do not interpret config syntax as authorization or actual isolation.
 
 - RESOLVED IN SOURCE / fixture-tested: frontend server-side health fetch previously followed redirects, falsely accepting another service and permitting escape from loopback. Now uses redirect:error. Four tests against real local HTTP fixtures passed. Actual Next.js runtime/E2E not verified.
+
+- RESOLVED IN SOURCE / focused tests: preflight now requires stable Node 24 to match the current engines range and checks required psql executable. Actual isolated preflight fails on Node 22, missing pnpm/Docker/daemon/Supabase CLI/psql/Redis. Package manager compatibility, local Docker context and target prerequisites remain to be verified. Update Node gate together with future engine-range changes.

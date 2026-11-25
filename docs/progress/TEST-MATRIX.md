@@ -34,3 +34,5 @@
 | Configuration review regressions | shadow URL, role separation, same database, required password, public leak prevention | 6 new tests; RED 5 fail/1 pass; focused GREEN 24/24 including 18 existing tests; full suite not rerun |
 
 | Frontend network boundary | correct liveness, redirect rejection with no destination request, wrong identity, HTTP errors and malformed input | RED 1 fail/3 pass; GREEN 4/4; combined focused suite 28/28; pnpm test unavailable exit 127 |
+
+| Preflight review regression | supported Node release, wrong major, prerelease/malformed output, missing psql | RED 8 failing assertions/subtests; GREEN 9/9 methods (4 new, 5 existing); live isolated preflight exit 1 |

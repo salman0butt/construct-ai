@@ -1,6 +1,6 @@
 # Local setup
 
-Clone and check out feat/product-foundation. Read CODEX-START-HERE.md. Web/API/worker source scaffold drafted; actual dependency installation and runtime verification pending. Verify prerequisites: Node supported LTS, pnpm, Docker runtime, Supabase CLI, Redis (local or compose). Ollama optional. Do not use cloud services. Run `python3 scripts/verify_autonomous_framework.py` to validate repository governance once cloned. Follow M00 plan for setup scripts; pnpm scripts are drafted but unverified.
+Clone and check out feat/product-foundation. Read CODEX-START-HERE.md. Web/API/worker source scaffold drafted; actual dependency installation and runtime verification pending. Verify prerequisites: stable Node 24 (current engines range), pnpm, Docker runtime, Supabase CLI, PostgreSQL client psql, Redis (local or compose). Ollama optional. Do not use cloud services. Run `python3 scripts/verify_autonomous_framework.py` to validate repository governance once cloned. Follow M00 plan for setup scripts; pnpm scripts are drafted but unverified.
 
 ## Prerequisite diagnostics
 
@@ -12,7 +12,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/preflight.py
 ```
 
-The preflight checker is read-only and exits nonzero when required tools are missing or Docker is unavailable. Resolve failures and inspect port warnings. Verify local Docker context, supported Node/package versions, and actual Supabase ports before starting services. Ollama is optional. A successful check is not a successful application build.
+The preflight checker is read-only and exits nonzero when required tools are missing, the Node version is not stable 24.x, or Docker is unavailable. Resolve failures and inspect port warnings. Verify local Docker context, supported Node/package versions, and actual Supabase ports before starting services. Ollama is optional. A successful check is not a successful application build.
 
 ## Draft web/API workspace
 

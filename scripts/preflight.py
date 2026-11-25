@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Read-only prerequisite checks; no installs, service starts or cloud calls."""
+import re
 import shutil
 import socket
 import subprocess
@@ -28,6 +29,15 @@ def probe(name, command, timeout=8):
     return Check(name, 'PASS', lines[0][:160] if lines else 'available')
 
 
+def node_check():
+    result = probe('Node', ['node', '-v'])
+    if result.state != 'PASS':
+        return result
+    if not re.fullmatch(r'v24\.\d+\.\d+', result.detail):
+        return Check('Node', 'FAIL', 'Node 24 stable is required by package.json engines')
+    return result
+
+
 def redis_check():
     native = probe('Redis', ['redis-server', '--version'])
     if native.state == 'PASS':
@@ -52,10 +62,11 @@ def exit_code(checks):
 
 
 def main():
-    checks = [probe('Git', ['git', '--version']), probe('Node', ['node', '-v']),
+    checks = [probe('Git', ['git', '--version']), node_check(),
               probe('pnpm', ['pnpm', '--version']), probe('Docker', ['docker', '--version']),
               probe('Docker daemon', ['docker', 'info', '--format', '{{.ServerVersion}}']),
-              probe('Supabase CLI', ['supabase', '--version']), redis_check()]
+              probe('Supabase CLI', ['supabase', '--version']),
+              probe('PostgreSQL client', ['psql', '--version']), redis_check()]
     checks.extend(port_check(port) for port in (3000, 4000, 6379))
     ollama = probe('Ollama', ['ollama', '--version'])
     checks.append(ollama if ollama.state == 'PASS' else Check('Ollama', 'OPTIONAL', 'not required for mock mode'))
